@@ -15,3 +15,17 @@
 
 .. .. image:: https://readthedocs.org/projects/oathtool/badge/?version=latest
 ..    :target: https://oathtool.readthedocs.io/en/latest/?badge=latest
+
+
+TOTP code generator based on oathtool.
+
+Usage
+=====
+
+Command-line::
+
+    $ python -m oathtool $key
+
+API::
+
+    >>> oathtool.generate_otp(key)
