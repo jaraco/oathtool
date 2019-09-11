@@ -1,4 +1,4 @@
-Welcome to skeleton documentation!
+Welcome to oathtool documentation!
 ========================================
 
 .. toctree::
@@ -7,7 +7,7 @@ Welcome to skeleton documentation!
    history
 
 
-.. automodule:: skeleton
+.. automodule:: oathtool
     :members:
     :undoc-members:
     :show-inheritance:

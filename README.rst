@@ -1,17 +1,17 @@
-.. image:: https://img.shields.io/pypi/v/skeleton.svg
-   :target: https://pypi.org/project/skeleton
+.. image:: https://img.shields.io/pypi/v/oathtool.svg
+   :target: https://pypi.org/project/oathtool
 
-.. image:: https://img.shields.io/pypi/pyversions/skeleton.svg
+.. image:: https://img.shields.io/pypi/pyversions/oathtool.svg
 
-.. image:: https://img.shields.io/travis/jaraco/skeleton/master.svg
-   :target: https://travis-ci.org/jaraco/skeleton
+.. image:: https://img.shields.io/travis/jaraco/oathtool/master.svg
+   :target: https://travis-ci.org/jaraco/oathtool
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
    :target: https://github.com/ambv/black
    :alt: Code style: Black
 
-.. .. image:: https://img.shields.io/appveyor/ci/jaraco/skeleton/master.svg
-..    :target: https://ci.appveyor.com/project/jaraco/skeleton/branch/master
+.. .. image:: https://img.shields.io/appveyor/ci/jaraco/oathtool/master.svg
+..    :target: https://ci.appveyor.com/project/jaraco/oathtool/branch/master
 
-.. .. image:: https://readthedocs.org/projects/skeleton/badge/?version=latest
-..    :target: https://skeleton.readthedocs.io/en/latest/?badge=latest
+.. .. image:: https://readthedocs.org/projects/oathtool/badge/?version=latest
+..    :target: https://oathtool.readthedocs.io/en/latest/?badge=latest
