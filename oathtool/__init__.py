@@ -29,22 +29,32 @@ def hmac(key, msg):
 
 
 def pad(input, size=8):
+    """
+    >>> pad('foo')
+    'foo====='
+    >>> pad('MZXW6YTBOJUWU23MNU')
+    'MZXW6YTBOJUWU23MNU======'
+    """
     quanta, remainder = divmod(len(input), size)
     padding = '=' * ((size - remainder) % size)
     return input + padding
 
 
 def clean(input):
-    return input.replace(' ', '').upper()
+    return input.replace(' ', '')
 
 
 def generate_otp(key, hotp_value=None):
+    """
+    >>> generate_otp('MZXW6YTBOJUWU23MNU', 52276810)
+    '487656'
+    """
     # convert HOTP to bytes
     # https://tools.ietf.org/rfc/rfc6238.txt
     # http://opensource.apple.com//source/python/python-3/python/Modules/structmodule.c
     hotp_value = struct.pack('>q', hotp_value or int(time.time() / 30))
     # convert base32 key to bytes
-    key = base64.b32decode(clean(pad(key)))
+    key = base64.b32decode(pad(clean(key)), casefold=True)
     # generate HMAC-SHA1 from HOTP based on key
     HMAC = hmac(key, hotp_value)
     # compute hash truncation
