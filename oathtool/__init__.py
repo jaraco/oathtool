@@ -48,6 +48,8 @@ def generate_otp(key, hotp_value=None):
     """
     >>> generate_otp('MZXW6YTBOJUWU23MNU', 52276810)
     '487656'
+    >>> generate_otp('MZXW6YTBOJUWU23MNU'*10, 52276810)
+    '295635'
     """
     # convert HOTP to bytes
     # https://tools.ietf.org/rfc/rfc6238.txt
