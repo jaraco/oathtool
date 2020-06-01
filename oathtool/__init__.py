@@ -67,7 +67,7 @@ def generate_otp(key, hotp_value=None):
 
 def main():
     try:
-        key, = sys.argv[1:]
+        (key,) = sys.argv[1:]
     except ValueError:
         print('provide sercret key and secret key only as arg')
         sys.exit(1)
