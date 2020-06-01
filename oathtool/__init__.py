@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sys
 import time
 import struct
@@ -75,3 +77,6 @@ def main():
         sys.exit(1)
 
     print(generate_otp(key))
+
+
+__name__ == '__main__' and main()
