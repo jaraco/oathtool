@@ -1,3 +1,10 @@
+v2.1.0
+======
+
+Added ``oathtool.generate-script``, a runpy executable
+routine to generate a standalone runtime executable script
+on Unix-like systems honoring shebangs and executable bits.
+
 v2.0.0
 ======
 
