@@ -35,3 +35,8 @@ Command-line::
 API::
 
     >>> oathtool.generate_otp(key)
+
+Create standalone script (Unix)::
+
+    $ python -m oauthtool.generate-script oauthtool
+    $ ./oauthtool
