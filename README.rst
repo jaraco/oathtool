@@ -38,11 +38,17 @@ API::
 
 Create standalone script (Unix)::
 
-    $ python -m oathtool.generate-script oathtool
+    $ python -m oathtool.generate-script
     $ ./oathtool $key
 
 Don't want to install oathtool, but just want the script? Use
 `pip-run <https://pypi.org/project/pip-run>`_::
 
-    $ pip-run oathtool -- -m oathtool.generate-script oathtool
+    $ pip-run oathtool -- -m oathtool.generate-script
     $ ./oathtool $key
+
+
+``generate-script`` also takes an arbitrary target path in
+case you wish to generate the script elsewhere::
+
+    $ python -m oathtool.generate-script ~/bin/my-oathtool

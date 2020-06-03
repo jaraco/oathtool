@@ -1,15 +1,20 @@
-import path
+import argparse
 
 try:
     from importlib.resources import files  # type: ignore
 except ImportError:
     from importlib_resources import files  # type: ignore
 
+import path
 import autocommand
 
 
-@autocommand.autocommand(__name__)
-def make_standalone_script(path: path.Path):
+parser = argparse.ArgumentParser()
+parser.add_argument('target', nargs='?', type=path.Path, default=path.Path('oathtool'))
+
+
+@autocommand.autocommand(__name__, parser=parser)
+def make_standalone_script(target):
     """
     On Unix-like systems, create an 'oathtool' executable
     script that stands alone without this Python library.
@@ -18,5 +23,6 @@ def make_standalone_script(path: path.Path):
     shebang = '#!/usr/bin/env python'
     hook = '__name__ == "__main__" and main()'
     text = '\n'.join((shebang, code, hook))
-    path.write_text(text)
-    path.chmod('a+x')
+    resolved = target.expanduser()
+    resolved.write_text(text)
+    resolved.chmod('a+x')

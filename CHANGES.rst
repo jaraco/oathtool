@@ -1,3 +1,9 @@
+v2.2.0
+======
+
+``generate-script`` now defaults to 'oathtool' but allows
+it to be overridden.
+
 v2.1.0
 ======
 
