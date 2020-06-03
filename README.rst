@@ -40,3 +40,9 @@ Create standalone script (Unix)::
 
     $ python -m oathtool.generate-script oathtool
     $ ./oathtool $key
+
+Don't want to install oathtool, but just want the script? Use
+`pip-run <https://pypi.org/project/pip-run>`_::
+
+    $ pip-run oathtool -- -m oathtool.generate-script oathtool
+    $ ./oathtool $key
