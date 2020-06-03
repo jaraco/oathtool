@@ -38,5 +38,5 @@ API::
 
 Create standalone script (Unix)::
 
-    $ python -m oauthtool.generate-script oauthtool
-    $ ./oauthtool
+    $ python -m oathtool.generate-script oathtool
+    $ ./oathtool $key
