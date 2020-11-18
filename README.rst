@@ -47,3 +47,8 @@ Don't want to install oathtool, but just want the script? Use
 case you wish to generate the script elsewhere::
 
     $ python -m oathtool.generate-script ~/bin/my-oathtool
+
+Or install with `pipx <https://pipxproject.github.io/pipx/>`_::
+
+    $ pipx install oathtool
+    $ oathtool $key
