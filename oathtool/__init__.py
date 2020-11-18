@@ -71,7 +71,7 @@ def main():
     try:
         (key,) = sys.argv[1:]
     except ValueError:
-        print('provide sercret key and secret key only as arg')
+        print('provide secret key as only arg')
         sys.exit(1)
 
     print(generate_otp(key))
