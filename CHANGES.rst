@@ -1,3 +1,8 @@
+v2.3.0
+======
+
+Add a console entry point and reference to pipx for installation.
+
 v2.2.0
 ======
 
