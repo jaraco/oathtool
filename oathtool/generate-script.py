@@ -2,7 +2,7 @@ import argparse
 
 try:
     from importlib.resources import files  # type: ignore
-except ImportError:
+except ImportError:  # pragma: nocover
     from importlib_resources import files  # type: ignore
 
 import path
