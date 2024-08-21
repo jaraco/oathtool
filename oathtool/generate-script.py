@@ -1,9 +1,9 @@
 import argparse
 
 try:
-    from importlib.resources import files  # type: ignore
+    from importlib.resources import files
 except ImportError:  # pragma: nocover
-    from importlib_resources import files  # type: ignore
+    from importlib_resources import files  # type: ignore[import-not-found, no-redef]
 
 import path
 import autocommand
