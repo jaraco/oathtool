@@ -69,9 +69,15 @@ def generate_otp(key, hotp_value=None):
 
 def main():
     try:
-        (key,) = sys.argv[1:]
-    except ValueError:
-        print('provide secret key as only arg')
-        sys.exit(1)
+        if sys.stdin.isatty():
+            # If stdin is not being piped, read from command-line argument
+            (key,) = sys.argv[1:]
+        else:
+            # Read from standard input (pipe)
+            key = sys.stdin.read().strip()
 
+        print(generate_otp(key))
+    except ValueError:
+        print('provide secret key as only arg or via stdin')
+        sys.exit(1)
     print(generate_otp(key))
