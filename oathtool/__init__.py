@@ -67,11 +67,23 @@ def generate_otp(key, hotp_value=None):
     )
 
 
+def _one(items):
+    (item,) = items
+    return item
+
+
+def get_key_arg():
+    return _one(sys.argv[1:])
+
+
+def get_key_stdin():
+    return not sys.stdin.isatty() and sys.stdin.read().strip()
+
+
 def main():
     try:
-        (key,) = sys.argv[1:]
+        key = get_key_stdin() or get_key_arg()
     except ValueError:
-        print('provide secret key as only arg')
+        print('provide secret key as only arg or via stdin')
         sys.exit(1)
-
     print(generate_otp(key))
