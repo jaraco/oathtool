@@ -1,3 +1,12 @@
+v2.4.0
+======
+
+Features
+--------
+
+- Added the option to read from stdin.
+
+
 v2.3.3
 ======
 
