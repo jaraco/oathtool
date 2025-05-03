@@ -5,9 +5,8 @@ try:
 except ImportError:  # pragma: nocover
     from importlib_resources import files
 
-import path
 import autocommand
-
+import path
 
 parser = argparse.ArgumentParser()
 parser.add_argument('target', nargs='?', type=path.Path, default=path.Path('oathtool'))

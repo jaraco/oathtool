@@ -1,9 +1,9 @@
-import sys
-import time
-import struct
+import base64
 import hashlib
 import string
-import base64
+import struct
+import sys
+import time
 
 trans_5C = bytes(x ^ 0x5C for x in range(256))
 trans_36 = bytes(x ^ 0x36 for x in range(256))
