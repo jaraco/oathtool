@@ -3,9 +3,11 @@ import subprocess
 
 import pytest
 
+test_key = 'MZXW6YTBOJUWU23MNU'
+
 
 def test_execution():
-    cmd = [sys.executable, '-m', 'oathtool', 'MZXW6YTBOJUWU23MNU']
+    cmd = [sys.executable, '-m', 'oathtool', test_key]
     subprocess.check_call(cmd)
 
 
@@ -20,3 +22,8 @@ def test_generate_script(tmpdir):
     cmd = [sys.executable, '-m', 'oathtool.generate-script', str(target)]
     subprocess.check_call(cmd)
     assert target.isfile()
+
+
+def test_piped_input():
+    cmd = [sys.executable, '-m', 'oathtool']
+    subprocess.run(cmd, input=test_key, check=True, text=True, encoding='utf-8')
