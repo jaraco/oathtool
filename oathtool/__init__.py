@@ -35,8 +35,7 @@ def pad(input, size=8):
     >>> pad('MZXW6YTBOJUWU23MNU')
     'MZXW6YTBOJUWU23MNU======'
     """
-    quanta, remainder = divmod(len(input), size)
-    padding = '=' * ((size - remainder) % size)
+    padding = '=' * (-len(input) % size)
     return input + padding
 
 
@@ -62,9 +61,8 @@ def generate_otp(key, hotp_value=None):
     # compute hash truncation
     cut = HMAC[-1] & 0x0F
     # encode into smaller number of digits
-    return '%06d' % (
-        (struct.unpack('>L', HMAC[cut : cut + 4])[0] & 0x7FFFFFFF) % 1000000
-    )
+    code = struct.unpack('>L', HMAC[cut : cut + 4])[0] & 0x7FFFFFFF
+    return f'{code % 1000000:06d}'
 
 
 def _one(items):
